@@ -1,0 +1,29 @@
+{
+  "name": "angular-iframe-auto-height",
+  "description": "AngularJS directive for iframe auto height.",
+  "main": [
+    "dist/css/iframe-auto-height.css",
+    "dist/js/angular-iframe-auto-height.js"
+  ],
+  "authors": [
+    "afei"
+  ],
+  "license": "MIT",
+  "keywords": ["angular","direcitve","iframe","autoheight"],
+  "homepage": "https://github.com/afeiship/angular-iframe-auto-height",
+  "moduleType": [
+    "amd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-module-stiffener": "afeiship/angular-module-stiffener"
+  }
+}
