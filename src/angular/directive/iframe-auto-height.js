@@ -4,32 +4,28 @@
   angular.module('nx.widget')
     .directive('nxIframeAutoHeight', ['$timeout',function ($timeout) {
       return {
-        restrict: 'E',
+        restrict: 'A',
         scope: {
-          cssClass: '@',
           value: '='
         },
         link:function(scope,elem,attrs,vm){
-          //code goes herer!
+          var iframDom=elem[0];
+          window.onload=function(){
+            scope.setHeight(iframDom);
+          };
+          window.onresize=function(){
+            scope.setHeight(iframDom);
+          };
         },
-        controller: ['$scope', function ($scope) {
-          $scope.plus = plus;
-          $scope.minus = minus;
-          $scope.value = $scope.value || 0;
-
-          function plus() {
-            $scope.value++;
+        controller:function($scope) {
+          $scope.setHeight=setHeight;
+          function setHeight(inIframeEl) {
+            var iframeWin = inIframeEl.contentWindow || inIframeEl.contentDocument.parentWindow;
+            if (iframeWin.document.body) {
+              inIframeEl.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+            }
           }
-
-          function minus() {
-            $scope.value--;
-          }
-        }],
-        template: '<div class="nx-widget-iframe-auto-height {{cssClass}}">' +
-        '<button class="btn plus" ng-click="plus()">+</button>' +
-        '<input class="value" ng-model="value" type="tel">' +
-        '<button class="btn minus" ng-click="minus()">-</button>' +
-        '</div>'
+        }
       };
 
     }]);
