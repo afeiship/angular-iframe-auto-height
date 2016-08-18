@@ -10,10 +10,7 @@
         },
         link:function(scope,elem,attrs,vm){
           var iframDom=elem[0];
-          window.onload=function(){
-            scope.setHeight(iframDom);
-          };
-          window.onresize=function(){
+          window.onload=window.onresize=function(){
             scope.setHeight(iframDom);
           };
         },

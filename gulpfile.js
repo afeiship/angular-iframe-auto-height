@@ -27,8 +27,7 @@ var config = {
 
 var scripts = [
   './src/angular/main.js',
-  './src/angular/directive/iframe-auto-height.js',
-  './src/angular/service/iframe-auto-height.js'
+  './src/angular/directive/iframe-auto-height.js'
 ];
 
 
