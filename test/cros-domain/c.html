@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<iframe id="c_iframe"  height="0" width="0"  src="http://www.a.com/agent.html" style="display:none" ></iframe>
+<script type="text/javascript">
+(function autoHeight(){
+var b_width = Math.max(document.body.scrollWidth,document.body.clientWidth);
+var b_height = Math.max(document.body.scrollHeight,document.body.clientHeight);
+var c_iframe = document.getElementById("c_iframe");
+c_iframe.src = c_iframe.src + "#" + b_width + "|" + b_height;  // 这里通过hash传递b.htm的宽高
+})();
+</script>
+</body>
+</html>
